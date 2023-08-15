@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotelConsoleClient", "RotelConsoleClient\RotelConsoleClient.csproj", "{FD89875E-95F4-4199-BC38-DAEAA25DBDC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotelNetworkApi", "RotelNetworkApi\RotelNetworkApi.csproj", "{8542A77F-10CF-414D-8CA4-CF226320CB61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD89875E-95F4-4199-BC38-DAEAA25DBDC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD89875E-95F4-4199-BC38-DAEAA25DBDC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD89875E-95F4-4199-BC38-DAEAA25DBDC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD89875E-95F4-4199-BC38-DAEAA25DBDC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8542A77F-10CF-414D-8CA4-CF226320CB61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8542A77F-10CF-414D-8CA4-CF226320CB61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8542A77F-10CF-414D-8CA4-CF226320CB61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8542A77F-10CF-414D-8CA4-CF226320CB61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
