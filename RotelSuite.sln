@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotelConsoleClient", "RotelConsoleClient\RotelConsoleClient.csproj", "{FD89875E-95F4-4199-BC38-DAEAA25DBDC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotelNetworkApi", "RotelNetworkApi\RotelNetworkApi.csproj", "{8542A77F-10CF-414D-8CA4-CF226320CB61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotelRemoteApi", "RotelRemoteApi\RotelRemoteApi.csproj", "{8542A77F-10CF-414D-8CA4-CF226320CB61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
