@@ -43,13 +43,16 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Communication\Communicator.cs" />
+        <Compile Include="Communication\CommunicatorProvider.cs" />
+        <Compile Include="Communication\IPCommunicator.cs" />
+        <Compile Include="Communication\Connection.cs" />
+        <Compile Include="Communication\RS232Communicator.cs" />
         <Compile Include="Configs\DeviceConfig.cs" />
         <Compile Include="Configs\ConfigsManager.cs" />
         <Compile Include="Configs\ConfigUtils.cs" />
-        <Compile Include="Communicator.cs" />
         <Compile Include="Extensions\DeviceConfigExtensions.cs" />
         <Compile Include="MessageType.cs" />
-        <Compile Include="Network.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>

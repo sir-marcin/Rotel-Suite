@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using RotelNetworkApi;
+using RotelNetworkApi.Communication;
 
 namespace RotelConsoleClient
 {
@@ -13,6 +14,8 @@ namespace RotelConsoleClient
          * - Detect all local Rotel devices in network
          * - Assign proper config through `model?` response (or notify if no config is available)
          */
+
+        private const string ModelName = "a14";
         
         public static async Task Main(string[] args)
         {
@@ -20,18 +23,18 @@ namespace RotelConsoleClient
             
             var configsManager = new ConfigsManager();
             configsManager.LoadConfigs();
-            if (!configsManager.TryGetConfig("a14", out var config))
+            if (!configsManager.TryGetConfig(ModelName, out var config))
             {
                 Console.WriteLine("Device config unavailable");
                 return;
             }
-                
-            var communicator = new Communicator(config);
-            await communicator.Connect();
+
+            var communicator = CommunicatorProvider.GetCommunicator(CommunicationType.RS232, config);
+            var connected = await communicator.Connect();
 
             try
             {
-                while (true)
+                while (connected)
                 {
                     Console.WriteLine("Available commands");
 
