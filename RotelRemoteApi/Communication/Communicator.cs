@@ -1,5 +1,4 @@
 using System;
-using System.Net.Sockets;
 using System.Threading.Tasks;
 using RotelNetworkApi.Extensions;
 
@@ -22,12 +21,11 @@ namespace RotelNetworkApi.Communication
             SetDeviceConfig(deviceConfig);
         }
         
-        void IDisposable.Dispose()
+        public virtual void Dispose()
         {
             Disconnect();
         }
-
-
+        
         public void SetDeviceConfig(DeviceConfig deviceConfig)
         {
             _deviceConfig = deviceConfig;

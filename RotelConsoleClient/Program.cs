@@ -9,10 +9,10 @@ namespace RotelConsoleClient
     {
         /*
          * - BUG: after turning off through Communicator the app can't reconnect
-         * - Introduce error handling for connection interruptions
-         * - Implement Communicator : IDisposable class for encapsulated Rotel controls
-         * - Detect all local Rotel devices in network
-         * - Assign proper config through `model?` response (or notify if no config is available)
+         * - TODO: Introduce error handling for connection interruptions
+         * - TODO: Implement Communicator : IDisposable class for encapsulated Rotel controls
+         * - TODO: Detect all local Rotel devices in network
+         * - TODO: Assign proper config through `model?` response (or notify if no config is available)
          */
 
         private const string ModelName = "a14";

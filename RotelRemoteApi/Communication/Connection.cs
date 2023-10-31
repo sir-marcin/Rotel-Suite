@@ -19,6 +19,7 @@ namespace RotelNetworkApi.Communication
             public const Handshake Handshake = System.IO.Ports.Handshake.None;
             public const int WriteTimeout = 500;
             public const int ConnectTimeout = 1000;
+            public const string SerialPortName = "COM1";
         }
     }
 }

@@ -12,16 +12,24 @@ public class RS232Communicator : Communicator
     {
     }
 
+    public override void Dispose()
+    {
+        base.Dispose();
+        
+        _serialPort?.Dispose();
+    }
+    
     public override bool IsConnected => _serialPort?.IsOpen == true;
     
-    public override async Task<bool> Connect()
+    public override Task<bool> Connect()
     {
         if (IsConnected)
         {
-            return true;
+            return Task.FromResult(true);
         }
 
-        _serialPort = new SerialPort("COM1", Connection.RS232.BaudRate, Connection.RS232.Parity,
+        var serialPortName = Connection.RS232.SerialPortName;
+        _serialPort = new SerialPort(serialPortName, Connection.RS232.BaudRate, Connection.RS232.Parity,
             Connection.RS232.DataBits, Connection.RS232.StopBits);
         _serialPort.Handshake = Connection.RS232.Handshake;
         
@@ -33,21 +41,12 @@ public class RS232Communicator : Communicator
         }
         catch (Exception e)
         {
-            Console.WriteLine("Connection error");
+            Console.WriteLine($"Connection error (port '{serialPortName}')");
             Console.WriteLine(e);
-            return false;
+            return Task.FromResult(false);
         }
 
-        var connectionTime = 0;
-        var connectionCheckInterval = 100;
-        
-        while (!_serialPort.IsOpen && connectionTime <= Connection.RS232.ConnectTimeout)
-        {
-            await Task.Delay(connectionCheckInterval);
-            connectionTime += connectionCheckInterval;
-        }
-
-        return _serialPort.IsOpen;
+        return Task.FromResult(true);
     }
 
     private void HandleDataReceived(object sender, SerialDataReceivedEventArgs e)
