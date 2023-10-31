@@ -1,5 +1,5 @@
 # Rotel-Suite
-.NET library for Rotel connection over IP/RS232 with example console client
+.NET library for Rotel connection over both IP and RS232 with example console client
 
 This is a .NET library that can be used to control Rotel devices that support either IP or RS232 communication.
 
