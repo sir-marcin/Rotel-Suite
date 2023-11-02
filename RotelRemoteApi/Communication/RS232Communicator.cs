@@ -51,8 +51,15 @@ public class RS232Communicator : Communicator
 
     private void HandleDataReceived(object sender, SerialDataReceivedEventArgs e)
     {
-        var response = _serialPort.ReadLine();
-        HandleResponseReceived(response);
+        try
+        {
+            var response = _serialPort.ReadLine();
+            HandleResponseReceived(response);
+        }
+        catch (Exception exception)
+        {
+            Console.WriteLine($"Error handling RS232 response\n{exception}");
+        }
     }
 
     public override void Disconnect()
@@ -69,6 +76,6 @@ public class RS232Communicator : Communicator
     {
         _serialPort.Write(message);
 
-        return null;
+        return Task.CompletedTask;
     }
 }
